@@ -1,10 +1,10 @@
 import { Hono } from "hono";
-import authors from "./authors";
-import books from "./books";
+import api from "./api";
+import web from "./web";
 
 const app = new Hono();
 
-app.route("/authors", authors);
-app.route("/books", books);
+app.route("/", web);
+app.route("/api", api);
 
 export default app;

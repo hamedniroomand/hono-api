@@ -1,5 +1,6 @@
 import { Hono } from "hono";
 import { serveStatic } from "hono/bun";
+import { HTTPException } from "hono/http-exception";
 
 import routes from "./routes";
 
@@ -28,10 +29,10 @@ app.notFound((c) => {
 
 app.onError((err, c) => {
 	const messages: Record<number, string> = {
-		401: "Unauthenticatated",
+		401: "Unauthenticaticated",
 		500: err.message || "Something went wrong",
 	};
-	const status = err?.res?.status || 500;
+	const status = err instanceof HTTPException ? err.status : 500;
 	const message = messages[status];
 	return c.json({ error: { message } }, status);
 });

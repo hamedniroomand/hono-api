@@ -1,8 +1,8 @@
 {
 	"name": "hono",
 	"scripts": {
-		"dev": "bun run --hot src/index.ts",
-		"build": "bun build src/index.ts --outfile dist/main.js --minify --target bun",
+		"dev": "bun run --hot src/main.ts",
+		"build": "bun build src/main.ts --outfile dist/main.js --minify --target bun",
 		"start": "bun run dist/main.js"
 	},
 	"dependencies": {
