@@ -10,7 +10,6 @@ export const userController = {
 	index() {
 		return factory.createHandlers(logMiddleware, async (c) => {
 			let users = await c.var.redis.get<User[]>("users");
-			console.log(`users from cache: ${users?.length}`, users);
 			if (users) {
 				return c.json({ data: users });
 			}
