@@ -1,12 +1,12 @@
-import { Hono } from "hono";
-import { userController } from "../../controllers/user.controller";
-import { factory } from "../../factory";
-import { logMiddleware } from "../../middlewares/log.middleware";
+import { userController } from "@/controllers/user.controller";
+import { factory } from "@/factory";
 
-const app = new Hono();
+const app = factory.createApp();
 
-const getUsers = factory.createHandlers(logMiddleware, userController.getUsers);
-
-app.get("/", ...getUsers);
+app.get("/", ...userController.index());
+app.post("/", ...userController.create());
+app.get("/:id", ...userController.show());
+app.put("/:id", ...userController.update());
+app.delete(":/id", ...userController.delete());
 
 export default app;

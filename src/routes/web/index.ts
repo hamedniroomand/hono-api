@@ -1,6 +1,6 @@
-import { Hono } from "hono";
+import { factory } from "@/factory";
 
-const app = new Hono();
+const app = factory.createApp();
 
 app.get("/", (c) => c.html(`<h1>Hello World</h1>`));
 
