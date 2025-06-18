@@ -1,3 +1,3 @@
-import { createFactory } from 'hono/factory'
+import { createFactory } from "hono/factory";
 
-export const factory = createFactory()
+export const factory = createFactory();

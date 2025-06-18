@@ -1,15 +1,15 @@
 {
-  "name": "hono",
-  "scripts": {
-    "dev": "bun run --hot src/index.ts",
-    "build": "bun build src/index.ts --outfile dist/main.js --minify --target bun",
-    "start": "bun run dist/main.js"
-  },
-  "dependencies": {
-    "hono": "^4.7.11"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "2.0.0",
-    "@types/bun": "latest"
-  }
+	"name": "hono",
+	"scripts": {
+		"dev": "bun run --hot src/index.ts",
+		"build": "bun build src/index.ts --outfile dist/main.js --minify --target bun",
+		"start": "bun run dist/main.js"
+	},
+	"dependencies": {
+		"hono": "^4.7.11"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "2.0.0",
+		"@types/bun": "latest"
+	}
 }
