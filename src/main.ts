@@ -1,10 +1,13 @@
 import { Hono } from "hono";
 import { serveStatic } from "hono/bun";
 import { HTTPException } from "hono/http-exception";
+import { LinearRouter } from "hono/router/linear-router";
 
 import routes from "./routes";
 
-const app = new Hono();
+const app = new Hono({
+	router: new LinearRouter(),
+});
 
 app.use(
 	"/static/*",
